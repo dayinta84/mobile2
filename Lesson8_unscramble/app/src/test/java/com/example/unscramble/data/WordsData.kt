@@ -1,0 +1,30 @@
+package com.example.unscramble.data
+
+const val MAX_NO_OF_WORDS = 10
+const val SCORE_INCREASE = 10
+
+// List with all the words for the Game
+val allWords: Set<String> =
+    setOf(
+        "choi seungcheol",
+        "yoon jeonghan",
+        "joshua hong",
+        "wen junhui",
+        "kwon soonyoung",
+        "jeon wonwoo",
+        "lee jihoon",
+        "lee seokmin",
+        "kim mingyu",
+        "xu minghao",
+        "boo seungkwan",
+        "chwe hansol vernon",
+        "lee chan"
+    )
+
+/**
+ * Maps words to their lengths. Each word in allWords has a unique length. This is required since
+ * the words are randomly picked inside GameViewModel and the selection is unpredictable.
+ */
+private val wordLengthMap: Map<Int, String> = allWords.associateBy({ it.length }, { it })
+
+internal fun getUnscrambledWord(scrambledWord: String) = wordLengthMap[scrambledWord.length] ?: ""

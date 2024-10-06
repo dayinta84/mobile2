@@ -12,7 +12,7 @@ interface MarsApiService {
     suspend fun getPhotos() : List<MarsPhoto>
 }
 
-private const val BASE_URL =
+/*private const val BASE_URL =
     "https://android-kotlin-fun-mars-server.appspot.com"
 
 private val retrofit = Retrofit.Builder()
@@ -24,4 +24,4 @@ object MarsApi {
     val retrofitService : MarsApiService by lazy {
         retrofit.create(MarsApiService::class.java)
     }
-}
+}*/

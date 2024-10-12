@@ -63,9 +63,11 @@ fun BluromaticScreen(blurViewModel: BlurViewModel = viewModel(factory = BlurView
             .fillMaxSize()
             .statusBarsPadding()
             .padding(
-                start = WindowInsets.safeDrawing.asPaddingValues()
+                start = WindowInsets.safeDrawing
+                    .asPaddingValues()
                     .calculateStartPadding(layoutDirection),
-                end = WindowInsets.safeDrawing.asPaddingValues()
+                end = WindowInsets.safeDrawing
+                    .asPaddingValues()
                     .calculateEndPadding(layoutDirection)
             )
     ) {
@@ -140,7 +142,6 @@ private fun BlurActions(
             }
             is BlurUiState.Complete -> {
                 Button(onStartClick) { Text(stringResource(R.string.start)) }
-                // Add a spacer and the new button with a "See File" label
                 Spacer(modifier = Modifier.width(dimensionResource(R.dimen.padding_small)))
                 FilledTonalButton({ onSeeFileClick(blurUiState.outputUri) })
                 { Text(stringResource(R.string.see_file)) }

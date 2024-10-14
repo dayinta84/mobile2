@@ -39,12 +39,13 @@ import java.util.Locale
 fun EntryBottomSheet(
     juiceTrackerViewModel: TrackerViewModel,
     sheetScaffoldState: BottomSheetScaffoldState,
+    //juice: Juice,
     onCancel: () -> Unit,
     onSubmit: () -> Unit,
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {
-    val juice by juiceTrackerViewModel.juicesStream.collectAsState()
+    val currentJuice by juiceTrackerViewModel.currentJuiceStream.collectAsState()
 
     BottomSheetScaffold(
         modifier = modifier,
@@ -54,7 +55,7 @@ fun EntryBottomSheet(
             Column {
                 SheetHeader(Modifier.padding(dimensionResource(R.dimen.padding_small)))
                 SheetForm(
-                    juice = juice,
+                    juice = currentJuice,
                     onUpdateJuice = juiceTrackerViewModel::updateCurrentJuice,
                     onCancel = onCancel,
                     onSubmit = onSubmit,
@@ -83,7 +84,8 @@ fun SheetHeader(modifier: Modifier = Modifier) {
 
 @Composable
 fun SheetForm(
-    juice: List<Juice>,
+    //juice: List<Juice>,
+    juice: Juice,
     onUpdateJuice: (Juice) -> Unit,
     onCancel: () -> Unit,
     onSubmit: () -> Unit,

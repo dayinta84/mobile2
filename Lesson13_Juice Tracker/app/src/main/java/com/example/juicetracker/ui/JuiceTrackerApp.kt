@@ -1,6 +1,5 @@
 package com.example.juicetracker.ui
 
-import JuiceTrackerList
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -17,6 +16,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.juicetracker.R
 import com.example.juicetracker.ui.bottomsheet.EntryBottomSheet
@@ -94,3 +94,4 @@ fun JuiceTrackerApp(
         }
     }
 }
+

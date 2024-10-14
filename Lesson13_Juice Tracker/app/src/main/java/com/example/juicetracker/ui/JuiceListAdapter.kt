@@ -54,7 +54,6 @@ class JuiceListAdapter(
     }
 
     class JuiceListViewHolder(
-        //private val binding: ListItemBinding,
         private val composeView: ComposeView,
         private val onEdit: (Juice) -> Unit,
         private val onDelete: (Juice) -> Unit
@@ -154,13 +153,11 @@ fun PreviewJuiceDetails() {
 fun RatingDisplay(rating: Int, modifier: Modifier = Modifier) {
     val displayDescription = pluralStringResource(R.plurals.number_of_stars, count = rating)
     Row(
-        // Content description is added here to support accessibility
         modifier.semantics {
             contentDescription = displayDescription
         }
     ) {
         repeat(rating) {
-            // Star [contentDescription] is null as the image is for illustrative purpose
             Image(
                 modifier = Modifier.size(32.dp),
                 painter = painterResource(R.drawable.baseline_star_24),

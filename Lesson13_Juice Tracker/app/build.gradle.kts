@@ -85,5 +85,8 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("com.google.accompanist:accompanist-themeadapter-material3:0.28.0")
 
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.0")
+    implementation ("androidx.compose.runtime:runtime-livedata:1.5.0")
+
     debugImplementation("androidx.compose.ui:ui-tooling")
 }

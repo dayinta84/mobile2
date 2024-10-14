@@ -20,6 +20,7 @@ import androidx.annotation.StringRes
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.juicetracker.R
+import com.example.juicetracker.ui.theme.Orange
 
 @Entity
 data class Juice(
@@ -31,11 +32,12 @@ data class Juice(
     val rating: Int
 )
 
-enum class JuiceColor(val color: Int, @StringRes val label: Int) {
-    Red(Color.RED, R.string.red),
-    Blue(Color.BLUE, R.string.blue),
-    Green(Color.GREEN, R.string.green),
-    Cyan(Color.CYAN, R.string.cyan),
-    Yellow(Color.YELLOW, R.string.yellow),
-    Magenta(Color.MAGENTA, R.string.magenta)
+enum class JuiceColor(val color: androidx.compose.ui.graphics.Color, @StringRes val label: Int) {
+    Red(androidx.compose.ui.graphics.Color.Red, R.string.red),
+    Blue(androidx.compose.ui.graphics.Color.Blue, R.string.blue),
+    Green(androidx.compose.ui.graphics.Color.Green, R.string.green),
+    Cyan(androidx.compose.ui.graphics.Color.Cyan, R.string.cyan),
+    Yellow(androidx.compose.ui.graphics.Color.Yellow, R.string.yellow),
+    Magenta(androidx.compose.ui.graphics.Color.Magenta, R.string.magenta),
+    Orange(com.example.juicetracker.ui.theme.Orange, R.string.orange)
 }
